@@ -6,7 +6,9 @@
         logger = require('morgan'),
         cookieParser = require('cookie-parser'),
         bodyParser = require('body-parser'),
-        routes = require('../routes/index');
+        middleware=require("./middleware")
+        routes = require('../routes/index'),
+        conf=require("./conf").get("development");
     
     var app = express();
 
@@ -20,6 +22,7 @@
     app.use(cookieParser());
     app.use(require('stylus').middleware(path.join(rootfolder, 'public')));
     app.use(express.static(path.join(rootfolder, 'public')));
+    middleware.setup(app, conf);
     router.run(app);
     app.use('/', routes);
     

@@ -31,7 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="core\conf\index.js" />
     <Compile Include="core\index.js" />
+    <Compile Include="core\middleware.js" />
     <Compile Include="core\router.js" />
     <Compile Include="routes\employee.js" />
     <Compile Include="routes\index.js" />
@@ -48,6 +50,7 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="core\" />
+    <Folder Include="core\conf\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
